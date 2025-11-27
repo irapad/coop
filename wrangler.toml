@@ -1,3 +1,13 @@
 name = "cosma-coop"
 compatibility_date = "2025-11-27"
-pages_build_output_dir = "dist"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+[build.upload]
+format = "service-worker"
+
+[site]
+bucket = "./dist"
