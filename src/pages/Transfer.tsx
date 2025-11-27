@@ -31,7 +31,7 @@ export const Transfer: React.FC = () => {
     setShowPinSheet(true);
   };
 
-  const handlePinComplete = (pin: string) => {
+  const handlePinComplete = (_pin: string) => {
     setShowPinSheet(false);
     setShowSuccess(true);
     setTimeout(() => {

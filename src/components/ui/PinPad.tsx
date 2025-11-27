@@ -34,12 +34,6 @@ export const PinPad: React.FC<PinPadProps> = ({
     setPin(prev => prev.slice(0, -1));
   };
 
-  const triggerShake = () => {
-    setShake(true);
-    setTimeout(() => setShake(false), 500);
-    setPin('');
-  };
-
   const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   return (

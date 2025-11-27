@@ -3,7 +3,7 @@ import { user } from '../data/mock';
 
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState(user);
+  const [currentUser] = useState(user);
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
