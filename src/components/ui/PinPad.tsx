@@ -16,7 +16,7 @@ export const PinPad: React.FC<PinPadProps> = ({
   title = 'ใส่รหัส PIN'
 }) => {
   const [pin, setPin] = useState('');
-  const [shake, setShake] = useState(false);
+  const [shake] = useState(false);
 
   useEffect(() => {
     if (pin.length === length) {
