@@ -27,8 +27,12 @@
     @apply pb-[env(safe-area-inset-bottom)];
   }
 
-  .gradient-purple {
-    background: linear-gradient(135deg, #8b3f9e 0%, #a855f7 100%);
+  .gradient-primary {
+    background: linear-gradient(135deg, #ccff00 0%, #b3e600 100%);
+  }
+  
+  .gradient-dark {
+    background: linear-gradient(180deg, #1c1c1e 0%, #0f0f11 100%);
   }
 
   .text-balance {

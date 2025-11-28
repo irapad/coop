@@ -22,13 +22,13 @@ export const Button: React.FC<ButtonProps> = ({
   icon,
   className = ''
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-app font-semibold transition-all tap-scale';
+  const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all tap-scale shadow-sm';
 
   const variantClasses = {
-    primary: 'bg-primary text-white hover:bg-primary-light',
-    secondary: 'bg-accent text-white hover:bg-accent/90',
-    outline: 'bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white',
-    ghost: 'bg-transparent text-primary hover:bg-primary/10',
+    primary: 'bg-primary text-primary-foreground hover:bg-primary-light shadow-glow',
+    secondary: 'bg-card text-textDark hover:bg-card/80',
+    outline: 'bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground',
+    ghost: 'bg-transparent text-textDark hover:bg-white/10',
     danger: 'bg-danger text-white hover:bg-danger/90'
   };
 

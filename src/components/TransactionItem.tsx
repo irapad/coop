@@ -78,29 +78,29 @@ export const TransactionItem: React.FC<TransactionItemProps> = ({ transaction, o
     <motion.div
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="flex items-center gap-3 p-4 hover:bg-gray-50 rounded-app cursor-pointer tap-scale"
+      className="flex items-center gap-4 p-5 bg-card hover:bg-white/5 rounded-app cursor-pointer tap-scale shadow-sm border border-transparent hover:border-primary/20 transition-colors"
     >
       {/* Icon */}
-      <div className={`w-12 h-12 rounded-full ${getColor(transaction.type)} flex items-center justify-center flex-shrink-0`}>
+      <div className={`w-14 h-14 rounded-full ${getColor(transaction.type)} flex items-center justify-center flex-shrink-0`}>
         {getIcon(transaction.type)}
       </div>
 
       {/* Details */}
       <div className="flex-1 min-w-0">
-        <h4 className="text-base font-semibold text-textDark truncate">
+        <h4 className="text-lg font-bold text-textDark truncate mb-1">
           {transaction.desc}
         </h4>
         <p className="text-sm text-textMuted">
-          {transaction.date} {transaction.time}
+          {transaction.date} • {transaction.time}
         </p>
       </div>
 
       {/* Amount */}
       <div className="text-right">
-        <p className={`text-lg font-bold ${amountColor}`}>
+        <p className={`text-xl font-bold ${amountColor}`}>
           {formatAmount(transaction.amount)}
         </p>
-        <p className="text-xs text-textMuted">{transaction.account}</p>
+        <p className="text-xs text-textMuted mt-1">{transaction.account}</p>
       </div>
     </motion.div>
   );

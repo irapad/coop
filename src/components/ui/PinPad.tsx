@@ -43,27 +43,27 @@ export const PinPad: React.FC<PinPadProps> = ({
       {/* PIN Dots */}
       <motion.div
         animate={shake ? { x: [-10, 10, -10, 10, 0] } : {}}
-        className="flex gap-3 mb-12"
+        className="flex gap-4 mb-12"
       >
         {Array.from({ length }).map((_, i) => (
           <div
             key={i}
             className={`
-              w-4 h-4 rounded-full border-2 transition-all
-              ${i < pin.length ? 'bg-primary border-primary' : 'border-gray-300'}
+              w-4 h-4 rounded-full transition-all duration-300
+              ${i < pin.length ? 'bg-primary scale-110 shadow-glow' : 'bg-card border border-gray-700'}
             `}
           />
         ))}
       </motion.div>
 
       {/* Number Grid */}
-      <div className="grid grid-cols-3 gap-4 w-full max-w-xs mb-4">
+      <div className="grid grid-cols-3 gap-6 w-full max-w-xs mb-4">
         {numbers.map(num => (
           <motion.button
             key={num}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleNumberClick(num)}
-            className="aspect-square rounded-full bg-gray-100 hover:bg-gray-200 text-2xl font-semibold tap-scale"
+            className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white tap-scale transition-colors border border-transparent hover:border-primary/30"
           >
             {num}
           </motion.button>
@@ -73,16 +73,16 @@ export const PinPad: React.FC<PinPadProps> = ({
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={onBiometric}
-          className="aspect-square rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center tap-scale"
+          className="aspect-square rounded-full flex items-center justify-center tap-scale"
           disabled={!onBiometric}
         >
-          {onBiometric && <Fingerprint size={28} className="text-primary" />}
+          {onBiometric && <Fingerprint size={32} className="text-primary" />}
         </motion.button>
 
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => handleNumberClick('0')}
-          className="aspect-square rounded-full bg-gray-100 hover:bg-gray-200 text-2xl font-semibold tap-scale"
+          className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white tap-scale transition-colors border border-transparent hover:border-primary/30"
         >
           0
         </motion.button>
@@ -90,9 +90,9 @@ export const PinPad: React.FC<PinPadProps> = ({
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={handleDelete}
-          className="aspect-square rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center tap-scale"
+          className="aspect-square rounded-full flex items-center justify-center tap-scale text-textMuted hover:text-danger transition-colors"
         >
-          <Delete size={28} className="text-danger" />
+          <Delete size={32} />
         </motion.button>
       </div>
     </div>
