@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from './ui/Card';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 interface Account {
   id: string;
@@ -20,13 +19,6 @@ interface AccountCardProps {
 
 export const AccountCard: React.FC<AccountCardProps> = ({ account, showDetails = true }) => {
   const navigate = useNavigate();
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  // 3D Tilt Effect
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [10, -10]);
-  const rotateY = useTransform(x, [-100, 100], [-10, 10]);
 
   const formatBalance = (amount: number) => {
     return amount.toLocaleString('th-TH', {
@@ -41,19 +33,6 @@ export const AccountCard: React.FC<AccountCardProps> = ({ account, showDetails =
       return `${parts[0]}-X-XXXXX-${parts[parts.length - 1]}`;
     }
     return accountNumber;
-  };
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set((event.clientX - centerX) / 5);
-    y.set((event.clientY - centerY) / 5);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
   };
 
   return (

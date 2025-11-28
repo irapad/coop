@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Bell } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface HeaderProps {
   title?: string;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, Wallet, ScanLine, Receipt, Menu } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface NavItem {
   id: string;
