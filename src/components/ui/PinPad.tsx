@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Delete, Fingerprint } from 'lucide-react';
+import { haptics } from '../../utils/haptics';
 
 interface PinPadProps {
   onComplete: (pin: string) => void;
@@ -26,11 +27,15 @@ export const PinPad: React.FC<PinPadProps> = ({
 
   const handleNumberClick = (num: string) => {
     if (pin.length < length) {
+      haptics.light();
       setPin(prev => prev + num);
     }
   };
 
   const handleDelete = () => {
+    if (pin.length > 0) {
+      haptics.selection();
+    }
     setPin(prev => prev.slice(0, -1));
   };
 
@@ -59,41 +64,37 @@ export const PinPad: React.FC<PinPadProps> = ({
       {/* Number Grid */}
       <div className="grid grid-cols-3 gap-6 w-full max-w-xs mb-4">
         {numbers.map(num => (
-          <motion.button
+          <button
             key={num}
-            whileTap={{ scale: 0.9 }}
             onClick={() => handleNumberClick(num)}
-            className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white tap-scale transition-colors border border-transparent hover:border-primary/30"
+            className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white transition-colors border border-transparent hover:border-primary/30"
           >
             {num}
-          </motion.button>
+          </button>
         ))}
 
         {/* Bottom Row */}
-        <motion.button
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={onBiometric}
-          className="aspect-square rounded-full flex items-center justify-center tap-scale"
+          className="aspect-square rounded-full flex items-center justify-center"
           disabled={!onBiometric}
         >
           {onBiometric && <Fingerprint size={32} className="text-primary" />}
-        </motion.button>
+        </button>
 
-        <motion.button
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={() => handleNumberClick('0')}
-          className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white tap-scale transition-colors border border-transparent hover:border-primary/30"
+          className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white transition-colors border border-transparent hover:border-primary/30"
         >
           0
-        </motion.button>
+        </button>
 
-        <motion.button
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={handleDelete}
-          className="aspect-square rounded-full flex items-center justify-center tap-scale text-textMuted hover:text-danger transition-colors"
+          className="aspect-square rounded-full flex items-center justify-center text-textMuted hover:text-danger transition-colors"
         >
           <Delete size={32} />
-        </motion.button>
+        </button>
       </div>
     </div>
   );

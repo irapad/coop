@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { haptics } from '../../utils/haptics';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ interface ButtonProps {
   disabled?: boolean;
   icon?: React.ReactNode;
   className?: string;
+  hapticFeedback?: 'light' | 'medium' | 'heavy';
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -20,7 +22,8 @@ export const Button: React.FC<ButtonProps> = ({
   fullWidth = false,
   disabled = false,
   icon,
-  className = ''
+  className = '',
+  hapticFeedback = 'medium'
 }) => {
   const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all tap-scale shadow-sm';
 
@@ -41,15 +44,21 @@ export const Button: React.FC<ButtonProps> = ({
   const widthClass = fullWidth ? 'w-full' : '';
   const disabledClass = disabled ? 'opacity-50 cursor-not-allowed' : '';
 
+  const handleClick = () => {
+    if (!disabled) {
+      haptics[hapticFeedback]();
+      onClick?.();
+    }
+  };
+
   return (
-    <motion.button
-      whileTap={{ scale: disabled ? 1 : 0.95 }}
-      onClick={onClick}
+    <button
+      onClick={handleClick}
       disabled={disabled}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${disabledClass} ${className}`}
     >
       {icon && <span>{icon}</span>}
       {children}
-    </motion.button>
+    </button>
   );
 };

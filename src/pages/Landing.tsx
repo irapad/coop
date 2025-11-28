@@ -58,10 +58,10 @@ export const Landing: React.FC = () => {
             className="text-center mb-8"
           >
             <div className="text-8xl mb-6">{slides[currentSlide].image}</div>
-            <h2 className="text-2xl font-bold text-textDark mb-3">
+            <h2 className="text-2xl font-bold text-white mb-3">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-base text-textMuted px-4">
+            <p className="text-base text-white/80 px-4">
               {slides[currentSlide].description}
             </p>
           </motion.div>
@@ -73,9 +73,8 @@ export const Landing: React.FC = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentSlide ? 'bg-primary w-8' : 'bg-gray-300'
-              }`}
+              className={`h-2 rounded-full transition-all ${index === currentSlide ? 'bg-primary w-8' : 'bg-white/30 w-2'
+                }`}
             />
           ))}
         </div>
@@ -84,15 +83,17 @@ export const Landing: React.FC = () => {
         <div className="flex gap-3 mb-6">
           <motion.button
             whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
             onClick={prevSlide}
-            className="p-3 bg-gray-100 rounded-full tap-scale"
+            className="p-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full tap-scale transition-all backdrop-blur-md"
           >
             <ChevronLeft size={24} />
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
             onClick={nextSlide}
-            className="p-3 bg-gray-100 rounded-full tap-scale"
+            className="p-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full tap-scale transition-all backdrop-blur-md"
           >
             <ChevronRight size={24} />
           </motion.button>

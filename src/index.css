@@ -56,7 +56,7 @@
   }
 
   .tap-scale {
-    @apply active:scale-95 transition-transform duration-150;
+    @apply transition-transform duration-100;
   }
 
   .scrollbar-hide {

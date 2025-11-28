@@ -28,13 +28,12 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left Side */}
         <div className="flex items-center gap-3">
           {showBack ? (
-            <motion.button
-              whileTap={{ scale: 0.9 }}
+            <button
               onClick={() => navigate(-1)}
-              className="p-2 hover:bg-gray-100 rounded-full tap-scale"
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
               <ArrowLeft size={24} className="text-textDark" />
-            </motion.button>
+            </button>
           ) : leftAction ? (
             leftAction
           ) : (
@@ -52,18 +51,17 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right Side */}
         <div className="flex items-center gap-2">
           {showNotification && (
-            <motion.button
-              whileTap={{ scale: 0.9 }}
+            <button
               onClick={() => navigate('/notifications')}
-              className="relative p-2 hover:bg-gray-100 rounded-full tap-scale"
+              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
               <Bell size={24} className="text-textDark" />
               {notificationCount > 0 && (
-                <span className="absolute top-1 right-1 w-5 h-5 bg-danger text-white text-xs font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-1 right-1 w-5 h-5 bg-danger text-white text-xs font-bold rounded-full flex items-center justify-center shadow-lg">
                   {notificationCount > 9 ? '9+' : notificationCount}
                 </span>
               )}
-            </motion.button>
+            </button>
           )}
           {rightAction}
           {!showNotification && !rightAction && <div className="w-10" />}

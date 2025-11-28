@@ -26,15 +26,14 @@ export const BottomNav: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-30 flex justify-center pb-safe safe-area-bottom">
-      <nav className="bg-card rounded-tab shadow-lg mx-4 mb-4 px-2 py-2 flex items-center justify-around max-w-app w-full">
+    <div className="fixed bottom-0 left-0 right-0 z-30 flex justify-center safe-area-bottom">
+      <nav className="bg-card shadow-lg px-2 py-3 pb-4 flex items-center justify-around max-w-app w-full border-t border-white/10">
         {navItems.map((item) => (
-          <motion.button
+          <button
             key={item.id}
-            whileTap={{ scale: 0.9 }}
             onClick={() => navigate(item.path)}
             className={`
-              flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-xl tap-scale
+              flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-xl
               transition-colors relative
               ${item.isCenter ? 'scale-110' : ''}
             `}
@@ -60,12 +59,9 @@ export const BottomNav: React.FC = () => {
 
             {/* Active indicator */}
             {isActive(item.path) && !item.isCenter && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute -top-1 w-8 h-1 bg-primary rounded-full"
-              />
+              <div className="absolute -top-1 w-8 h-1 bg-primary rounded-full" />
             )}
-          </motion.button>
+          </button>
         ))}
       </nav>
     </div>

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
+import { GradientMesh } from './components/ui/GradientMesh';
 
 // Pages
 import { Landing } from './pages/Landing';
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <GradientMesh />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Landing />} />
