@@ -41,8 +41,8 @@ export const Transactions: React.FC = () => {
               onClick={() => setFilter(f.id)}
               className={`px-6 py-2.5 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
                 filter === f.id
-                  ? 'bg-primary text-primary-foreground shadow-glow'
-                  : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/20'
+                  ? 'bg-primary text-white shadow-glow'
+                  : 'bg-white/10 text-black/70 hover:bg-white/20 hover:text-black border border-black/20'
               }`}
             >
               {f.label}
