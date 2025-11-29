@@ -21,11 +21,11 @@ export const Deposit: React.FC = () => {
     <PageContainer title="ฝากเงิน" showBack showBottomNav={false}>
       <div className="p-4 space-y-4">
         <div>
-          <label className="block text-sm font-medium text-white mb-2">เลือกบัญชี</label>
+          <label className="block text-sm font-medium text-black mb-2">เลือกบัญชี</label>
           <select
             value={account}
             onChange={(e) => setAccount(e.target.value)}
-            className="w-full px-4 py-3 rounded-app border-2 border-white/10 bg-white/5 text-white focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
+            className="w-full px-4 py-3 rounded-app border-2 border-black/10 bg-white/5 text-black focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
           >
             {accounts.map(acc => (
               <option key={acc.id} value={acc.id}>{acc.name}</option>
@@ -56,13 +56,13 @@ export const Deposit: React.FC = () => {
         <Card>
           <h3 className="text-title mb-3">วิธีการฝาก</h3>
           <div className="space-y-2">
-            <button className="w-full p-3 bg-white/5 border border-white/10 text-white rounded-app text-left hover:bg-white/10 tap-scale transition-all">
+            <button className="w-full p-3 bg-white/5 border border-black/10 text-black rounded-app text-left hover:bg-black/10 tap-scale transition-all">
               QR Code
             </button>
-            <button className="w-full p-3 bg-white/5 border border-white/10 text-white rounded-app text-left hover:bg-white/10 tap-scale transition-all">
+            <button className="w-full p-3 bg-white/5 border border-black/10 text-black rounded-app text-left hover:bg-black/10 tap-scale transition-all">
               โอนผ่านธนาคาร
             </button>
-            <button className="w-full p-3 bg-white/5 border border-white/10 text-white rounded-app text-left hover:bg-white/10 tap-scale transition-all">
+            <button className="w-full p-3 bg-white/5 border border-black/10 text-black rounded-app text-left hover:bg-black/10 tap-scale transition-all">
               ฝากที่สาขา
             </button>
           </div>
