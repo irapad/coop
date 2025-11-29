@@ -48,25 +48,25 @@ export const Calculator: React.FC = () => {
         />
 
         {principal && months && (
-          <Card gradient padding="lg">
-            <h3 className="text-white/80 text-sm mb-4">ผลการคำนวณ</h3>
+          <Card gradient padding="lg" className='bg-primary-light/50'>
+            <h3 className="text-black/80 text-sm mb-4">ผลการคำนวณ</h3>
             <div className="space-y-3">
               <div>
-                <p className="text-white/80 text-sm">งวดชำระ/เดือน</p>
-                <p className="text-3xl font-bold text-white">
+                <p className="text-black/80 text-sm">งวดชำระ/เดือน</p>
+                <p className="text-3xl font-bold text-black">
                   ฿{calculateMonthly().toLocaleString('th-TH')}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4 pt-3 border-t border-white/20">
+              <div className="grid grid-cols-2 gap-4 pt-3 border-t border-black/20">
                 <div>
-                  <p className="text-white/80 text-xs">ยอดรวมทั้งหมด</p>
-                  <p className="text-lg font-bold text-white">
+                  <p className="text-black/80 text-xs">ยอดรวมทั้งหมด</p>
+                  <p className="text-lg font-bold text-black">
                     ฿{totalPayment.toLocaleString('th-TH')}
                   </p>
                 </div>
                 <div>
-                  <p className="text-white/80 text-xs">ดอกเบี้ยรวม</p>
-                  <p className="text-lg font-bold text-white">
+                  <p className="text-black/80 text-xs">ดอกเบี้ยรวม</p>
+                  <p className="text-lg font-bold text-black">
                     ฿{totalInterest.toLocaleString('th-TH')}
                   </p>
                 </div>
