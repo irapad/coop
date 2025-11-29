@@ -62,11 +62,11 @@ export const Transfer: React.FC = () => {
       <div className="p-4 space-y-4">
         {/* From Account */}
         <div>
-          <label className="block text-sm font-medium text-white mb-2">จากบัญชี</label>
+          <label className="block text-sm font-medium text-black mb-2">จากบัญชี</label>
           <select
             value={fromAccount}
             onChange={(e) => setFromAccount(e.target.value)}
-            className="w-full px-4 py-3 rounded-app border-2 border-white/10 bg-white/5 text-white focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
+            className="w-full px-4 py-3 rounded-app border-2 border-black/10 bg-white/5 text-black focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
           >
             {accounts.map(acc => (
               <option key={acc.id} value={acc.id}>
@@ -78,11 +78,11 @@ export const Transfer: React.FC = () => {
 
         {/* To Account */}
         <div>
-          <label className="block text-sm font-medium text-white mb-2">ไปยังบัญชี</label>
+          <label className="block text-sm font-medium text-black mb-2">ไปยังบัญชี</label>
           <select
             value={toAccount}
             onChange={(e) => setToAccount(e.target.value)}
-            className="w-full px-4 py-3 rounded-app border-2 border-white/10 bg-white/5 text-white focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
+            className="w-full px-4 py-3 rounded-app border-2 border-black/10 bg-white/5 text-black focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
           >
             <option value="">เลือกบัญชี</option>
             {accounts.filter(acc => acc.id !== fromAccount).map(acc => (
@@ -108,7 +108,7 @@ export const Transfer: React.FC = () => {
             <button
               key={amt}
               onClick={() => setAmount(amt.toString())}
-              className="py-2 bg-white/10 hover:bg-white/20 text-white rounded-app text-sm font-medium tap-scale border border-white/10 transition-all"
+              className="py-2 bg-white/10 hover:bg-white/20 text-black rounded-app text-sm font-medium tap-scale border border-black/10 transition-all"
             >
               {amt.toLocaleString()}
             </button>

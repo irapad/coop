@@ -16,16 +16,16 @@ export const Shares: React.FC = () => {
         <Card gradient padding="lg">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <p className="text-white/80 text-sm mb-2">มูลค่าหุ้น</p>
-              <p className="text-4xl font-bold text-white">
+              <p className="text-black/80 text-sm mb-2">มูลค่าหุ้น</p>
+              <p className="text-4xl font-bold text-black">
                 ฿{shares.value.toLocaleString('th-TH')}
               </p>
             </div>
-            <div className="bg-white/20 p-3 rounded-full">
-              <TrendingUp size={24} className="text-white" />
+            <div className="bg-green-200 p-3 rounded-full">
+              <TrendingUp size={24} className="text-green-500" />
             </div>
           </div>
-          <p className="text-white/90 text-sm">
+          <p className="text-black/90 text-sm">
             {shares.units} หุ้น × ฿{shares.pricePerUnit}
           </p>
         </Card>
@@ -49,7 +49,7 @@ export const Shares: React.FC = () => {
           <h3 className="text-title mb-4">มูลค่าหุ้น 6 เดือน</h3>
           <ResponsiveContainer width="100%" height={150}>
             <LineChart data={chartData}>
-              <XAxis dataKey="month" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <XAxis dataKey="month" stroke="#727272ff" style={{ fontSize: '12px' }} />
               <YAxis hide />
               <Line type="monotone" dataKey="amount" stroke="#10b981" strokeWidth={2} />
             </LineChart>
