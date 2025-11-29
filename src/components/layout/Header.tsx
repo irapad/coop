@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Bell size={24} className="text-textDark" />
               {notificationCount > 0 && (
-                <span className="absolute top-1 right-1 w-5 h-5 bg-danger text-white text-xs font-bold rounded-full flex items-center justify-center shadow-lg">
+                <span className="absolute top-1 right-1 w-5 h-5 bg-danger text-black text-xs font-bold rounded-full flex items-center justify-center shadow-lg">
                   {notificationCount > 9 ? '9+' : notificationCount}
                 </span>
               )}

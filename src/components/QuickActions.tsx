@@ -20,28 +20,28 @@ export const QuickActions: React.FC = () => {
       label: 'โอน',
       icon: <ArrowRightLeft size={24} />,
       path: '/transfer',
-      color: 'bg-primary/90 text-dark'
+      color: 'bg-primary/90 text-white'
     },
     {
       id: 'deposit',
       label: 'ฝาก',
       icon: <PiggyBank size={24} />,
       path: '/deposit',
-      color: 'bg-white/10 text-white'
+      color: 'bg-black/5 text-black'
     },
     {
       id: 'withdraw',
       label: 'ถอน',
       icon: <Wallet size={24} />,
       path: '/withdraw',
-      color: 'bg-white/10 text-white'
+      color: 'bg-black/5 text-black  '
     },
     {
       id: 'loan',
       label: 'จ่ายกู้',
       icon: <CreditCard size={24} />,
       path: '/loans',
-      color: 'bg-white/10 text-white'
+      color: 'bg-black/5 text-black  '
     }
   ];
 
@@ -55,10 +55,10 @@ export const QuickActions: React.FC = () => {
           onClick={() => navigate(action.path)}
           className="flex flex-col items-center gap-2 tap-scale"
         >
-          <div className={`w-14 h-14 rounded-full ${action.color} flex items-center justify-center backdrop-blur-md border border-white/10 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-white/20`}>
+          <div className={`w-14 h-14 rounded-full ${action.color} flex items-center justify-center backdrop-blur-md border border-white/10 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/20`}>
             {action.icon}
           </div>
-          <span className="text-sm text-white font-medium">{action.label}</span>
+          <span className="text-sm text-black font-medium">{action.label}</span>
         </motion.button>
       ))}
     </div>

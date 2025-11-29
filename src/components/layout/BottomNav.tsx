@@ -26,7 +26,7 @@ export const BottomNav: React.FC = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-30 flex justify-center safe-area-bottom">
-      <nav className="bg-card shadow-lg px-2 py-3 pb-4 flex items-center justify-around max-w-app w-full border-t border-white/10">
+      <nav className="bg-card shadow-lg px-2 py-3 pb-4 flex items-center justify-around max-w-app w-full border-t border-black/10">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -43,15 +43,15 @@ export const BottomNav: React.FC = () => {
             )}
 
             <span className={`
-              ${isActive(item.path) ? 'text-primary' : item.isCenter ? 'text-white' : 'text-textMuted'}
-              ${item.isCenter ? 'text-white' : ''}
+              ${isActive(item.path) ? 'text-primary' : item.isCenter ? 'text-black' : 'text-textMuted'}
+              ${item.isCenter ? 'text-black' : ''}
             `}>
               {item.icon}
             </span>
 
             <span className={`
               text-xs font-medium
-              ${isActive(item.path) ? 'text-primary' : item.isCenter ? 'text-white' : 'text-textMuted'}
+              ${isActive(item.path) ? 'text-primary' : item.isCenter ? 'text-black' : 'text-textMuted'}
             `}>
               {item.label}
             </span>

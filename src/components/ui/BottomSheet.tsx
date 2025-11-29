@@ -92,12 +92,12 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
               bg-card/95 backdrop-blur-xl rounded-t-[32px]
               ${heightClasses[height]}
               overflow-hidden
-              shadow-2xl border-t border-white/10
+              shadow-2xl border-t border-black/10
             `}
           >
             {/* Drag Handle */}
             <div className="flex justify-center pt-4 pb-2">
-              <div className="w-12 h-1.5 bg-white/30 rounded-full cursor-grab active:cursor-grabbing" />
+              <div className="w-12 h-1.5 bg-black/30 rounded-full cursor-grab active:cursor-grabbing" />
             </div>
 
             {/* Header */}

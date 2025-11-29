@@ -18,16 +18,16 @@ export const AccountDetail: React.FC = () => {
 
   return (
     <PageContainer title={account.name} showBack showNotification notificationCount={2}>
-      <div className="p-4 space-y-6">
+      <div className="p-4 space-y-6 ">
         {/* Balance Card */}
-        <Card gradient padding="lg">
-          <p className="text-white/80 text-sm mb-2">ยอดเงินคงเหลือ</p>
-          <p className="text-4xl font-bold text-white mb-4">
+        <Card gradient padding="lg" className="rounded-xxl bg-black/1">
+          <p className="text-black/80 text-sm mb-2">ยอดเงินคงเหลือ</p>
+          <p className="text-4xl font-bold text-black mb-4">
             ฿{account.balance.toLocaleString('th-TH')}
           </p>
-          <div className="flex justify-between text-white/90 text-sm">
+          <div className="flex justify-between text-black/90 text-sm">
             <span>เลขบัญชี: {account.accountNumber}</span>
-            <span>ดอกเบี้ย {account.rate}%</span>
+            <span>ดอกเบี้ย {account.rate}%</span> 
           </div>
         </Card>
 

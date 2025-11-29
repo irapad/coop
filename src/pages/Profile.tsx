@@ -33,7 +33,7 @@ export const Profile: React.FC = () => {
         {/* Profile Header */}
         <Card>
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-20 h-20 rounded-full gradient-purple flex items-center justify-center text-white text-3xl font-bold">
+            <div className="w-20 h-20 rounded-full gradient-purple flex items-center justify-center text-black text-3xl font-bold">
               {user.name.charAt(0)}
             </div>
             <div className="flex-1">

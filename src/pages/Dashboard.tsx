@@ -24,7 +24,7 @@ export const Dashboard: React.FC = () => {
           onClick={() => navigate('/profile')}
           className="flex items-center gap-2 tap-scale"
         >
-          <div className="w-10 h-10 rounded-full gradient-purple flex items-center justify-center text-white text-sm font-bold">
+          <div className="w-10 h-10 rounded-full gradient-purple flex items-center justify-center text-black text-sm font-bold">
             {user.name.charAt(0)}
           </div>
         </button>

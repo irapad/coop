@@ -35,17 +35,17 @@ export const AmountSlider: React.FC<AmountSliderProps> = ({
     <div className="space-y-6">
       {/* Amount Display */}
       <div className="text-center">
-        <p className="text-5xl font-bold text-white mb-2">
+        <p className="text-5xl font-bold text-black mb-2">
           {currency}{formatAmount(value)}
         </p>
-        <p className="text-sm text-white/60">
+        <p className="text-sm text-black/60">
           ยอดคงเหลือ: {currency}{formatAmount(max)}
         </p>
       </div>
 
       {/* Slider */}
       <div className="relative px-2">
-        <div className="relative h-3 bg-white/10 rounded-full overflow-hidden">
+        <div className="relative h-3 bg-black/10 rounded-full overflow-hidden">
           {/* Progress Bar */}
           <motion.div
             className="absolute h-full bg-gradient-to-r from-primary via-primary-light to-primary rounded-full shadow-glow"
@@ -88,7 +88,7 @@ export const AmountSlider: React.FC<AmountSliderProps> = ({
 
         {/* Thumb */}
         <motion.div
-          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full shadow-lg pointer-events-none border-4 border-white/20"
+          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full shadow-lg pointer-events-none border-4 border-black/20"
           style={{ left: `calc(${percentage}% - 16px)` }}
           animate={{ scale: isDragging ? 1.2 : 1 }}
           transition={{ type: 'spring', stiffness: 300 }}
@@ -115,7 +115,7 @@ export const AmountSlider: React.FC<AmountSliderProps> = ({
             className={`py-3 rounded-full font-bold text-sm transition-all ${
               value === amount
                 ? 'bg-primary text-primary-foreground shadow-glow'
-                : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                : 'bg-black/5 text-black hover:bg-black/10 border border-black/10'
             }`}
           >
             {formatAmount(amount)}
@@ -124,7 +124,7 @@ export const AmountSlider: React.FC<AmountSliderProps> = ({
       </div>
 
       {/* Min/Max Labels */}
-      <div className="flex justify-between text-xs text-white/50">
+      <div className="flex justify-between text-xs text-black/50">
         <span>{currency}{formatAmount(min)}</span>
         <span>{currency}{formatAmount(max)}</span>
       </div>

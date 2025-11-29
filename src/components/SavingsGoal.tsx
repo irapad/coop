@@ -61,8 +61,8 @@ export const SavingsGoal: React.FC = () => {
   return (
     <Card glass>
       <div className="mb-4">
-        <h3 className="text-lg font-bold text-white">เป้าหมายการออม</h3>
-        <p className="text-sm text-white/60">ติดตามความก้าวหน้าของคุณ</p>
+        <h3 className="text-lg font-bold text-black">เป้าหมายการออม</h3>
+        <p className="text-sm text-black/60">ติดตามความก้าวหน้าของคุณ</p>
       </div>
 
       <div className="space-y-4">
@@ -89,10 +89,10 @@ export const SavingsGoal: React.FC = () => {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <h4 className="text-sm font-bold text-white truncate">
+                  <h4 className="text-sm font-bold text-black truncate">
                     {goal.name}
                   </h4>
-                  <p className="text-xs text-white/60">
+                  <p className="text-xs text-black/60">
                     ฿{formattedCurrent} / ฿{formattedTarget}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export const SavingsGoal: React.FC = () => {
               </div>
 
               {/* Progress Bar */}
-              <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
+              <div className="relative h-2 bg-black/10 rounded-full overflow-hidden">
                 <div
                   className="absolute h-full rounded-full"
                   style={{
@@ -119,7 +119,7 @@ export const SavingsGoal: React.FC = () => {
                 <motion.div
                   className="absolute inset-0"
                   style={{
-                    background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
+                    background: 'linear-gradient(90deg, transparent 0%, rgba(167, 224, 11, 0.3) 50%, transparent 100%)',
                     backgroundSize: '200% 100%',
                   }}
                   animate={{
@@ -144,12 +144,12 @@ export const SavingsGoal: React.FC = () => {
                 </p>
               )}
               {percentage >= 75 && percentage < 100 && (
-                <p className="text-xs text-white/60 mt-1">
+                <p className="text-xs text-black/60 mt-1">
                   เกือบถึงแล้ว! 💪
                 </p>
               )}
               {percentage >= 50 && percentage < 75 && (
-                <p className="text-xs text-white/60 mt-1">
+                <p className="text-xs text-black/60 mt-1">
                   ครึ่งทางแล้ว! 🚀
                 </p>
               )}
@@ -160,7 +160,7 @@ export const SavingsGoal: React.FC = () => {
 
       {/* Add Goal Button */}
       <button
-        className="w-full mt-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-2xl text-white font-medium text-sm transition-all"
+        className="w-full mt-4 py-3 bg-black/5 hover:bg-black/10 border border-black/10 hover:border-primary/30 rounded-2xl text-black font-medium text-sm transition-all"
       >
         + เพิ่มเป้าหมายใหม่
       </button>

@@ -16,11 +16,11 @@ export const Loans: React.FC = () => {
       <div className="p-4 space-y-4">
         {/* Summary */}
         <Card gradient padding="lg">
-          <p className="text-white/80 text-sm mb-2">ยอดกู้คงเหลือ</p>
-          <p className="text-4xl font-bold text-white mb-4">
+          <p className="text-black/80 text-sm mb-2">ยอดกู้คงเหลือ</p>
+          <p className="text-4xl font-bold text-black mb-4">
             ฿{totalLoan.toLocaleString('th-TH')}
           </p>
-          <div className="flex gap-2 text-xs text-white/90">
+          <div className="flex gap-2 text-xs text-black/90">
             <AlertCircle size={16} />
             <span>งวดถัดไป: 10 ธ.ค. 2024</span>
           </div>

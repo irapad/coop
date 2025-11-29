@@ -49,9 +49,9 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-card/95 backdrop-blur-md border border-white/20 rounded-2xl p-3 shadow-2xl">
-          <p className="text-white font-bold">฿{payload[0].value.toLocaleString('th-TH')}</p>
-          <p className="text-white/60 text-xs">{payload[0].payload.day}</p>
+        <div className="bg-card/95 backdrop-blur-md border border-black/20 rounded-2xl p-3 shadow-2xl">
+          <p className="text-black font-bold">฿{payload[0].value.toLocaleString('th-TH')}</p>
+          <p className="text-black/60 text-xs">{payload[0].payload.day}</p>
         </div>
       );
     }
@@ -62,10 +62,10 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
     <Card glass className={className}>
       <div className="mb-4">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-white">การใช้จ่าย</h3>
+          <h3 className="text-lg font-bold text-black">การใช้จ่าย</h3>
 
           {/* Period Tabs */}
-          <div className="flex gap-1 bg-white/5 p-1 rounded-full">
+          <div className="flex gap-1 bg-black/5 p-1 rounded-full">
             {periods.map(({ key, label }) => (
               <button
                 key={key}
@@ -73,7 +73,7 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
                 className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${
                   period === key
                     ? 'bg-primary text-primary-foreground shadow-glow'
-                    : 'text-white/60 hover:text-white'
+                    : 'text-black/60 hover:text-black'
                 }`}
               >
                 {label}
@@ -84,15 +84,15 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
 
         {/* Stats */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-            <p className="text-white/60 text-xs mb-1">ทั้งหมด</p>
-            <p className="text-white font-bold text-lg">
+          <div className="bg-black/5 rounded-2xl p-3 border border-black/10">
+            <p className="text-black/60 text-xs mb-1">ทั้งหมด</p>
+            <p className="text-black font-bold text-lg">
               ฿{totalSpending.toLocaleString('th-TH')}
             </p>
           </div>
-          <div className="bg-white/5 rounded-2xl p-3 border border-white/10">
-            <p className="text-white/60 text-xs mb-1">เฉลี่ย</p>
-            <p className="text-white font-bold text-lg">
+          <div className="bg-black/5 rounded-2xl p-3 border border-black/10">
+            <p className="text-black/60 text-xs mb-1">เฉลี่ย</p>
+            <p className="text-black font-bold text-lg">
               ฿{avgSpending.toLocaleString('th-TH')}
             </p>
           </div>
@@ -105,19 +105,19 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
           <AreaChart data={data} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#ccff00" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#ccff00" stopOpacity={0} />
+                <stop offset="5%" stopColor="#deff25ff" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#718d03ff" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(238, 235, 235, 0.05)" />
             <XAxis
               dataKey="day"
-              stroke="rgba(255,255,255,0.3)"
+              stroke="rgba(22, 22, 22, 0.3)"
               style={{ fontSize: '12px' }}
               tickLine={false}
             />
             <YAxis
-              stroke="rgba(255,255,255,0.3)"
+              stroke="rgba(17, 16, 16, 0.3)"
               style={{ fontSize: '12px' }}
               tickLine={false}
               tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
@@ -126,7 +126,7 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({ className = '' }) 
             <Area
               type="monotone"
               dataKey="amount"
-              stroke="#ccff00"
+              stroke="#aed806ff"
               strokeWidth={3}
               fill="url(#colorAmount)"
               animationDuration={800}

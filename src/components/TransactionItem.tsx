@@ -66,7 +66,7 @@ export const TransactionItem: React.FC<TransactionItemProps> = ({ transaction, o
       case 'interest':
         return 'bg-gradient-to-br from-success/20 to-success/30 text-success border-success/30';
       default:
-        return 'bg-gradient-to-br from-white/10 to-white/5 text-white/70 border-white/20';
+        return 'bg-gradient-to-br from-black/10 to-black/5 text-black/70 border-black/20';
     }
   };
 
@@ -122,7 +122,7 @@ export const TransactionItem: React.FC<TransactionItemProps> = ({ transaction, o
         onDragEnd={handleDragEnd}
         style={{ x, opacity }}
         onClick={onClick}
-        className="relative flex items-center gap-4 p-4 bg-white/5 backdrop-blur-md hover:bg-white/10 rounded-app cursor-pointer border border-white/10 hover:border-primary/30 transition-all shadow-lg"
+        className="relative flex items-center gap-4 p-4 bg-black/1 backdrop-blur-md hover:bg-black/5 rounded-app cursor-pointer border border-black/10 hover:border-primary/30 transition-all shadow-lg"
       >
         {/* Icon */}
         <div
@@ -133,10 +133,10 @@ export const TransactionItem: React.FC<TransactionItemProps> = ({ transaction, o
 
         {/* Details */}
         <div className="flex-1 min-w-0">
-          <h4 className="text-base font-bold text-white truncate mb-1">
+          <h4 className="text-base font-bold text-black truncate mb-1">
             {transaction.desc}
           </h4>
-          <p className="text-xs text-white/60">
+          <p className="text-xs text-black/60">
             {transaction.date} • {transaction.time}
           </p>
         </div>
@@ -146,7 +146,7 @@ export const TransactionItem: React.FC<TransactionItemProps> = ({ transaction, o
           <p className={`text-lg font-bold ${amountColor}`}>
             {formatAmount(transaction.amount)}
           </p>
-          <p className="text-xs text-white/50 mt-0.5">{transaction.account}</p>
+          <p className="text-xs text-black/50 mt-0.5">{transaction.account}</p>
         </div>
       </motion.div>
     </div>

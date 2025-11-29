@@ -33,11 +33,11 @@ export const Withdraw: React.FC = () => {
     <PageContainer title="ถอนเงิน" showBack showBottomNav={false}>
       <div className="p-4 space-y-4">
         <div>
-          <label className="block text-sm font-medium text-white mb-2">เลือกบัญชี</label>
+          <label className="block text-sm font-medium text-black mb-2">เลือกบัญชี</label>
           <select
             value={account}
             onChange={(e) => setAccount(e.target.value)}
-            className="w-full px-4 py-3 rounded-app border-2 border-white/10 bg-white/5 text-white focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
+            className="w-full px-4 py-3 rounded-app border-2 border-black/10 bg-white/5 text-black focus:border-primary focus:outline-none focus:bg-white/10 transition-all"
           >
             {accounts.map(acc => (
               <option key={acc.id} value={acc.id}>

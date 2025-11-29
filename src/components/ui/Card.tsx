@@ -27,11 +27,11 @@ export const Card: React.FC<CardProps> = ({
 
   // Enhanced glassmorphism effect
   const glassClasses = glass
-    ? 'bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-white/20'
+    ? 'bg-black/1 backdrop-blur-xl border border-black/10 shadow-2xl hover:bg-black/10 hover:border-black/20'
     : '';
 
   const backgroundClass = gradient
-    ? 'gradient-purple text-white shadow-2xl'
+    ? 'gradient-purple text-black shadow-2xl'
     : glass
       ? glassClasses
       : 'bg-card card-shadow hover:shadow-lg';

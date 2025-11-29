@@ -64,7 +64,7 @@ export const BalanceCard: React.FC<BalanceCardProps> = ({ totalBalance, classNam
           animate={shimmerControls}
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(221, 255, 100, 0.1) 50%, transparent 100%)',
             backgroundSize: '200% 100%',
           }}
         />
@@ -72,30 +72,30 @@ export const BalanceCard: React.FC<BalanceCardProps> = ({ totalBalance, classNam
         <div className="relative z-10">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <p className="text-white/80 text-sm mb-2">
+              <p className="text-black/80 text-sm mb-2">
                 ยอดเงินรวม
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="text-white text-4xl font-bold">
+                <span className="text-black text-4xl font-bold">
                   {showBalance ? `฿${formatBalance(displayBalance)}` : '฿••••••'}
                 </span>
               </div>
             </div>
             <button
               onClick={() => setShowBalance(!showBalance)}
-              className="p-2 hover:bg-white/20 rounded-full transition-colors"
+              className="p-2 hover:bg-black/20 rounded-full transition-colors"
             >
               {showBalance ? (
-                <Eye size={24} className="text-white" />
+                <Eye size={24} className="text-black" />
               ) : (
-                <EyeOff size={24} className="text-white" />
+                <EyeOff size={24} className="text-black" />
               )}
             </button>
           </div>
 
           <button
             onClick={() => navigate('/accounts')}
-            className="flex items-center gap-2 text-white/90 text-sm hover:text-white transition-colors"
+            className="flex items-center gap-2 text-black/90 text-sm hover:text-black transition-colors"
           >
             <span>ดูรายละเอียด</span>
             <ChevronRight size={16} />

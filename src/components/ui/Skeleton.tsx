@@ -14,7 +14,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
     height,
     className = ''
 }) => {
-    const baseClasses = 'bg-white/10 rounded-app overflow-hidden relative';
+    const baseClasses = 'bg-black/10 rounded-app overflow-hidden relative';
 
     const variantClasses = {
         text: 'h-4 w-full',
@@ -34,7 +34,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
             style={sizeStyle}
         >
             <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-transparent"
                 animate={{
                     x: ['-100%', '100%']
                 }}
@@ -52,7 +52,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 export const TransactionSkeleton: React.FC = () => (
     <div className="space-y-3">
         {[1, 2, 3].map((i) => (
-            <div key={i} className="flex items-center gap-3 p-4 bg-white/5 rounded-app">
+            <div key={i} className="flex items-center gap-3 p-4 bg-black/5 rounded-app">
                 <Skeleton variant="circle" />
                 <div className="flex-1 space-y-2">
                     <Skeleton width="60%" />

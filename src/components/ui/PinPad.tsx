@@ -67,7 +67,7 @@ export const PinPad: React.FC<PinPadProps> = ({
           <button
             key={num}
             onClick={() => handleNumberClick(num)}
-            className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white transition-colors border border-transparent hover:border-primary/30"
+            className="aspect-square rounded-full bg-card hover:bg-black/10 text-3xl font-bold text-black transition-colors border border-transparent hover:border-primary/30"
           >
             {num}
           </button>
@@ -84,7 +84,7 @@ export const PinPad: React.FC<PinPadProps> = ({
 
         <button
           onClick={() => handleNumberClick('0')}
-          className="aspect-square rounded-full bg-card hover:bg-white/10 text-3xl font-bold text-white transition-colors border border-transparent hover:border-primary/30"
+          className="aspect-square rounded-full bg-card hover:bg-black/10 text-3xl font-bold text-black transition-colors border border-transparent hover:border-primary/30"
         >
           0
         </button>
